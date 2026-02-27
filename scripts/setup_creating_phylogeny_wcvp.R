@@ -133,10 +133,9 @@ check2 <- check %>%
 
 check2$species <- gsub(" ", "_", check2$species)
 
-library(phytools)
-final <- add.random(result$phylo, tips = check2$species)
+write.tree(result$phylo, "data/output_tree.tre")
+write.table(result$sp.list, "data/output_splist.txt")
 
 
-write.tree(final$phylo, "data/output_tree.tre")
-write.table(final$sp.list, "data/output_splist.txt")
+
 
